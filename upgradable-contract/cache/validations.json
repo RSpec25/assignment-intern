@@ -1,0 +1,1239 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/usdt_stable.sol:BasicToken": {
+        "src": "contracts/usdt_stable.sol:113",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [
+          "contracts/usdt_stable.sol:SafeMath"
+        ],
+        "methods": [
+          "transfer(address,uint256)",
+          "balanceOf(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BasicToken",
+              "label": "balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/usdt_stable.sol:116"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "basisPointsRate",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:119"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "maximumFee",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:120"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:BlackList": {
+        "src": "contracts/usdt_stable.sol:281",
+        "inherit": [
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "getBlackListStatus(address)",
+          "getOwner()",
+          "addBlackList(address)",
+          "removeBlackList(address)",
+          "destroyBlackFunds(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BlackList",
+              "label": "isBlackListed",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts/usdt_stable.sol:293"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20": {
+        "src": "contracts/usdt_stable.sol:96",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic"
+        ],
+        "libraries": [],
+        "methods": [
+          "allowance(address,address)",
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20Basic": {
+        "src": "contracts/usdt_stable.sol:80",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20Basic",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:81"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Ownable": {
+        "src": "contracts/usdt_stable.sol:45",
+        "version": {
+          "withMetadata": "0fa1ce785e2f5a411d631e5c7e8f8e564bff37cce4c6c5e5ad73e0b992e0bc91",
+          "withoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438",
+          "linkedWithoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "Ownable()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "owner",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:46"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Pausable": {
+        "src": "contracts/usdt_stable.sol:242",
+        "version": {
+          "withMetadata": "91314d4912102cb38d994732e88872d085741fb65a1d19890551fc5cbd91ba9d",
+          "withoutMetadata": "20773f1857eb74d7785e14feecb60fe1a99303a04b548aebade6035dc4c501a5",
+          "linkedWithoutMetadata": "20773f1857eb74d7785e14feecb60fe1a99303a04b548aebade6035dc4c501a5"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "pause()",
+          "unpause()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Pausable",
+              "label": "paused",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:246"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:SafeMath": {
+        "src": "contracts/usdt_stable.sol:11",
+        "version": {
+          "withMetadata": "7eb855406abfdd0e3a1e564567171ea9fc34fa145bc7b63eb0b287168d1fd267",
+          "withoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b",
+          "linkedWithoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:StandardToken": {
+        "src": "contracts/usdt_stable.sol:167",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)",
+          "allowance(address,address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "StandardToken",
+              "label": "allowed",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts/usdt_stable.sol:168"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:UpgradedStandardToken": {
+        "src": "contracts/usdt_stable.sol:320",
+        "inherit": [
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferByLegacy(address,address,uint256)",
+          "transferFromByLegacy(address,address,address,uint256)",
+          "approveByLegacy(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:usdt_stable": {
+        "src": "contracts/usdt_stable.sol:335",
+        "version": {
+          "withMetadata": "eb118cc117cca3d8c64ec0a8d19b648528fc25492a6c4408d99092ba65ba56b3",
+          "withoutMetadata": "830d9c9b6dc8acb7dff3369b52db97482918cb507ac2bd2eb57ecb7a2e63fa9b",
+          "linkedWithoutMetadata": "830d9c9b6dc8acb7dff3369b52db97482918cb507ac2bd2eb57ecb7a2e63fa9b"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:BlackList",
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Pausable",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "TetherToken(uint256,string storage pointer,string storage pointer,uint256)",
+          "transfer(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "balanceOf(address)",
+          "approve(address,uint256)",
+          "allowance(address,address)",
+          "deprecate(address)",
+          "totalSupply()",
+          "issue(uint256)",
+          "redeem(uint256)",
+          "setParams(uint256,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "usdt_stable",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:336"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:337"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "decimals",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:338"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "upgradedAddress",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:339"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "deprecated",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:340"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string storage pointer"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      }
+    },
+    {
+      "contracts/usdt_stable.sol:BasicToken": {
+        "src": "contracts/usdt_stable.sol:113",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [
+          "contracts/usdt_stable.sol:SafeMath"
+        ],
+        "methods": [
+          "transfer(address,uint256)",
+          "balanceOf(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "basisPointsRate",
+            "src": "contracts/usdt_stable.sol:119"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maximumFee",
+            "src": "contracts/usdt_stable.sol:120"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BasicToken",
+              "label": "balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/usdt_stable.sol:116"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "basisPointsRate",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:119"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "maximumFee",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:120"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:BlackList": {
+        "src": "contracts/usdt_stable.sol:281",
+        "inherit": [
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "getBlackListStatus(address)",
+          "getOwner()",
+          "addBlackList(address)",
+          "removeBlackList(address)",
+          "destroyBlackFunds(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BlackList",
+              "label": "isBlackListed",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts/usdt_stable.sol:293"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20": {
+        "src": "contracts/usdt_stable.sol:96",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic"
+        ],
+        "libraries": [],
+        "methods": [
+          "allowance(address,address)",
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20Basic": {
+        "src": "contracts/usdt_stable.sol:80",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20Basic",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:81"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Ownable": {
+        "src": "contracts/usdt_stable.sol:45",
+        "version": {
+          "withMetadata": "548422003ab8ed0941efb6e670f96e5853254711938f73df6398422cb5f8c11b",
+          "withoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438",
+          "linkedWithoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "Ownable()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "owner",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:46"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Pausable": {
+        "src": "contracts/usdt_stable.sol:242",
+        "version": {
+          "withMetadata": "a1dc4107a7655ac4f5c55635034c994edb2da8fcaed44f2296a9b8c0a2d0281f",
+          "withoutMetadata": "4ecc32fe9a4184660f9f3456f5ab89282ff963d0f6d7c077d8c190cf02ff8fca",
+          "linkedWithoutMetadata": "4ecc32fe9a4184660f9f3456f5ab89282ff963d0f6d7c077d8c190cf02ff8fca"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "pause()",
+          "unpause()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "paused",
+            "src": "contracts/usdt_stable.sol:246"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Pausable",
+              "label": "paused",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:246"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:SafeMath": {
+        "src": "contracts/usdt_stable.sol:11",
+        "version": {
+          "withMetadata": "ffc0853f49e94da7e58f7350b2ce004a4683cf8081de67f19a8cad8476f68215",
+          "withoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b",
+          "linkedWithoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:StandardToken": {
+        "src": "contracts/usdt_stable.sol:167",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)",
+          "allowance(address,address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "StandardToken",
+              "label": "allowed",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts/usdt_stable.sol:168"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:UpgradedStandardToken": {
+        "src": "contracts/usdt_stable.sol:320",
+        "inherit": [
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferByLegacy(address,address,uint256)",
+          "transferFromByLegacy(address,address,address,uint256)",
+          "approveByLegacy(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:usdt_stable": {
+        "src": "contracts/usdt_stable.sol:335",
+        "version": {
+          "withMetadata": "5fadc6e7d901a615d41c722defd907c11e1df960173fac86fd44c67a58373a59",
+          "withoutMetadata": "3d39e984c840df6f205fa1a51748acbb0e09de28ba92a26877e15470f482f625",
+          "linkedWithoutMetadata": "3d39e984c840df6f205fa1a51748acbb0e09de28ba92a26877e15470f482f625"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:BlackList",
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Pausable",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "TetherToken(uint256,string storage pointer,string storage pointer,uint256)",
+          "transfer(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "balanceOf(address)",
+          "approve(address,uint256)",
+          "allowance(address,address)",
+          "deprecate(address)",
+          "totalSupply()",
+          "issue(uint256)",
+          "redeem(uint256)",
+          "setParams(uint256,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "usdt_stable",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:336"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:337"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "decimals",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:338"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "upgradedAddress",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:339"
+            },
+            {
+              "contract": "usdt_stable",
+              "label": "deprecated",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:340"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string storage pointer"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      }
+    },
+    {
+      "contracts/usdt_stable.sol:BasicToken": {
+        "src": "contracts/usdt_stable.sol:113",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [
+          "contracts/usdt_stable.sol:SafeMath"
+        ],
+        "methods": [
+          "transfer(address,uint256)",
+          "balanceOf(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "basisPointsRate",
+            "src": "contracts/usdt_stable.sol:119"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "maximumFee",
+            "src": "contracts/usdt_stable.sol:120"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BasicToken",
+              "label": "balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/usdt_stable.sol:116"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "basisPointsRate",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:119"
+            },
+            {
+              "contract": "BasicToken",
+              "label": "maximumFee",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:120"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:BlackList": {
+        "src": "contracts/usdt_stable.sol:281",
+        "inherit": [
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "getBlackListStatus(address)",
+          "getOwner()",
+          "addBlackList(address)",
+          "removeBlackList(address)",
+          "destroyBlackFunds(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "BlackList",
+              "label": "isBlackListed",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts/usdt_stable.sol:293"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20": {
+        "src": "contracts/usdt_stable.sol:96",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20Basic"
+        ],
+        "libraries": [],
+        "methods": [
+          "allowance(address,address)",
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:ERC20Basic": {
+        "src": "contracts/usdt_stable.sol:80",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20Basic",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:81"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Ownable": {
+        "src": "contracts/usdt_stable.sol:45",
+        "version": {
+          "withMetadata": "0f5d313c40f715ecb2582aaeae3e00c9540565495819e6d730fff1ea308320d6",
+          "withoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438",
+          "linkedWithoutMetadata": "507d67981588468ee14c1cbe9a742ba00840257a16cb6793369a98bd33de1438"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "Ownable()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "owner",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:46"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:Pausable": {
+        "src": "contracts/usdt_stable.sol:242",
+        "version": {
+          "withMetadata": "e23d7e84e4b630ee397857d82f3f8423438f2cee313ce4b025f89340501ded56",
+          "withoutMetadata": "4ecc32fe9a4184660f9f3456f5ab89282ff963d0f6d7c077d8c190cf02ff8fca",
+          "linkedWithoutMetadata": "4ecc32fe9a4184660f9f3456f5ab89282ff963d0f6d7c077d8c190cf02ff8fca"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "pause()",
+          "unpause()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "paused",
+            "src": "contracts/usdt_stable.sol:246"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Pausable",
+              "label": "paused",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:246"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:SafeMath": {
+        "src": "contracts/usdt_stable.sol:11",
+        "version": {
+          "withMetadata": "85e91dab74f3173c0dd765a5ae41e2887b573181127a04aebdfa2ced490530de",
+          "withoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b",
+          "linkedWithoutMetadata": "0491044c25070bde90c79376af748024f4c4390eb79b5d0ab0efddc6565d330b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:StandardToken": {
+        "src": "contracts/usdt_stable.sol:167",
+        "inherit": [
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)",
+          "allowance(address,address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "StandardToken",
+              "label": "allowed",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts/usdt_stable.sol:168"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:TetherToken": {
+        "src": "contracts/usdt_stable.sol:335",
+        "version": {
+          "withMetadata": "4bcda183c4015b176e3754f5480939fc3b85a1eb5b2a751c3a4a69fb27542302",
+          "withoutMetadata": "7b955ebf16b38de2a51c4aadca2b70fcff54447e5bab4961bde77e836d70d14e",
+          "linkedWithoutMetadata": "7b955ebf16b38de2a51c4aadca2b70fcff54447e5bab4961bde77e836d70d14e"
+        },
+        "inherit": [
+          "contracts/usdt_stable.sol:BlackList",
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Pausable",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "TetherToken(uint256,string storage pointer,string storage pointer,uint256)",
+          "transfer(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "balanceOf(address)",
+          "approve(address,uint256)",
+          "allowance(address,address)",
+          "deprecate(address)",
+          "totalSupply()",
+          "issue(uint256)",
+          "redeem(uint256)",
+          "setParams(uint256,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "contract": "TetherToken",
+              "label": "name",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:336"
+            },
+            {
+              "contract": "TetherToken",
+              "label": "symbol",
+              "type": "t_string_storage",
+              "src": "contracts/usdt_stable.sol:337"
+            },
+            {
+              "contract": "TetherToken",
+              "label": "decimals",
+              "type": "t_uint256",
+              "src": "contracts/usdt_stable.sol:338"
+            },
+            {
+              "contract": "TetherToken",
+              "label": "upgradedAddress",
+              "type": "t_address",
+              "src": "contracts/usdt_stable.sol:339"
+            },
+            {
+              "contract": "TetherToken",
+              "label": "deprecated",
+              "type": "t_bool",
+              "src": "contracts/usdt_stable.sol:340"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string storage pointer"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      },
+      "contracts/usdt_stable.sol:UpgradedStandardToken": {
+        "src": "contracts/usdt_stable.sol:320",
+        "inherit": [
+          "contracts/usdt_stable.sol:StandardToken",
+          "contracts/usdt_stable.sol:ERC20",
+          "contracts/usdt_stable.sol:BasicToken",
+          "contracts/usdt_stable.sol:ERC20Basic",
+          "contracts/usdt_stable.sol:Ownable"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferByLegacy(address,address,uint256)",
+          "transferFromByLegacy(address,address,address,uint256)",
+          "approveByLegacy(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.4.17"
+      }
+    }
+  ]
+}
